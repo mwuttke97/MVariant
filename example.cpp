@@ -31,10 +31,6 @@ string getType(T t){
 }
 
 void test(){
-	base_Variant * variant = makeVariant('1');
-	cout << "Value of variant is " << variant << endl;
-	cout << "getType(variant) is " << getType(variant) << endl << endl;
-
 	Variant x = Variant(3.14);
 	cout << "Value of x is " << x << " (" << x.getTypeString() << ")" << endl;
 	cout << "getType(x) is " << getType(x) << endl << endl;

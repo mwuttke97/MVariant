@@ -6,11 +6,12 @@
  */
 
 #include <stdint.h>
-#include "MVariant.h"
-
 #include <string>
 #include <algorithm>
 #include <iostream>
+
+#include "MVariant.h"
+#include "MVariant_private.h"
 
 namespace MVariant{
 
