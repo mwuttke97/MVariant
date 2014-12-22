@@ -44,6 +44,11 @@ void test(){
 	cout << "Value of x is " << x << " (" << x.getTypeString() << ")" << endl;
 	cout << "getType(x) is " << getType(x) << endl << endl;
 
+	cout << "x /= 2" << endl;
+	x /= 2;
+	cout << "Value of x is " << x << " (" << x.getTypeString() << ")" << endl;
+	cout << "getType(x) is " << getType(x) << endl << endl;
+
 	string str_newType_x;
 	VARIANT_TYPE type = VT_NONE;
 	while (type == VT_NONE){
@@ -88,6 +93,11 @@ void test(){
 	z = z.clone(type);
 	cout << "Value of z is " << z << " (" << z.getTypeString() << ")" << endl;
 	cout << "getType(z) is still" << getType(z) << "!" << endl;
+	if (x == z){
+		cout << "x == z" << endl;
+	} else{
+		cout << "x != z" << endl;
+	}
 }
 }
 
