@@ -653,7 +653,7 @@ Variant Variant::operator *=(Variant var) {
 }
 
 Variant Variant::operator /=(Variant var) {
-	return *this = var / *this;
+	return *this = *this / var ;
 }
 
 Variant::Variant(char value) {
