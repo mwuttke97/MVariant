@@ -93,6 +93,14 @@ std::istream& operator >>(std::istream& istream, Variant & var) {
 	return var >>(istream);
 }
 
+std::ostream & operator <<(std::ostream & ostream, base_Variant * var){
+	return var->operator <<(ostream);
+}
+
+std::istream & operator >>(std::istream & istream, base_Variant * var){
+	return var->operator >>(istream);
+}
+
 std::ostream& Variant::operator <<(std::ostream& ostream) {
 	if (m_variant){
 		return ostream << m_variant;
