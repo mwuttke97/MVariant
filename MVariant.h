@@ -22,6 +22,7 @@ private:
 	VARIANT_TYPE m_type;
 
 public:
+	Variant();
 	Variant(char value);
 	Variant(unsigned char value);
 	Variant(int value);
@@ -70,7 +71,6 @@ public:
 	Variant operator -= (Variant var);
 	Variant operator *= (Variant var);
 	Variant operator /= (Variant var);
-	Variant& operator = (Variant& val);
 	Variant& operator = (Variant val);
 
 public:

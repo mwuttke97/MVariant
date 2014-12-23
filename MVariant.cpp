@@ -656,6 +656,11 @@ Variant Variant::operator /=(Variant var) {
 	return *this = *this / var ;
 }
 
+Variant::Variant() {
+	m_type = VT_NONE;
+	m_variant = 0;
+}
+
 Variant::Variant(char value) {
 	m_variant = makeVariant(value);
 	m_type = VT_CHAR;
@@ -820,15 +825,6 @@ Variant Variant::clone(VARIANT_TYPE t) {
 Variant::~Variant() {
 	if (m_variant)
 		delete m_variant;
-}
-
-Variant& Variant::operator =(Variant& val) {
-	if (m_variant)
-		delete m_variant;
-
-	m_variant = val.m_variant->clone();
-	m_type = val.m_type;
-	return *this;
 }
 
 Variant& Variant::operator =(Variant val) {
