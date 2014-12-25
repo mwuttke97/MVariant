@@ -171,6 +171,58 @@ VARIANT_TYPE Variant::getType() const {
 	return m_type;
 }
 
+Variant::operator char() const {
+	return m_variant->toChar();
+}
+
+Variant::operator unsigned char() const {
+	return m_variant->toUChar();
+}
+
+Variant::operator short() const {
+	return m_variant->toShort();
+}
+
+Variant::operator unsigned short() const {
+	return m_variant->toUShort();
+}
+
+Variant::operator int() const {
+	return m_variant->toInt();
+}
+
+Variant::operator unsigned int() const {
+	return m_variant->toUInt();
+}
+
+Variant::operator long() const {
+	return m_variant->toLong();
+}
+
+Variant::operator unsigned long() const {
+	return m_variant->toULong();
+}
+
+Variant::operator long long() const {
+	return m_variant->toLongLong();
+}
+
+Variant::operator unsigned long long() const {
+	return m_variant->toULongLong();
+}
+
+Variant::operator float() const {
+	return m_variant->toFloat();
+}
+
+Variant::operator double() const {
+	return m_variant->toDouble();
+}
+
+Variant::operator long double() const {
+	return m_variant->toLDouble();
+}
+
 Variant Variant::operator ++(int) {
 	switch (m_type){
 		case VT_CHAR:
