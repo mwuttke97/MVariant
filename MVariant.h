@@ -71,7 +71,7 @@ public:
 	Variant operator -= (Variant var);
 	Variant operator *= (Variant var);
 	Variant operator /= (Variant var);
-	Variant& operator = (Variant val);
+	Variant operator = (Variant val);
 
 public:
 	std::istream & operator >> (std::istream & istream);
@@ -85,6 +85,11 @@ Variant operator / (Variant, Variant);
 
 bool operator== (Variant, Variant);
 bool operator!= (Variant, Variant);
+
+bool operator> (Variant, Variant);
+bool operator< (Variant, Variant);
+bool operator>= (Variant, Variant);
+bool operator<= (Variant, Variant);
 
 
 std::istream& operator>>(std::istream & istream, Variant & var);

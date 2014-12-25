@@ -632,6 +632,270 @@ bool operator== (Variant var1, Variant var2) {
 	}
 }
 
+template<typename T> bool operator> (Variant var, T t){
+	switch (var.getType()){
+		case VT_CHAR:
+			return reinterpret_cast<Variant_Char*>(var.getVariant())->m_value > t;
+		case VT_UCHAR:
+			return reinterpret_cast<Variant_UChar*>(var.getVariant())->m_value > t;
+		case VT_SHORT:
+			return reinterpret_cast<Variant_Short*>(var.getVariant())->m_value > t;
+		case VT_USHORT:
+			return reinterpret_cast<Variant_UShort*>(var.getVariant())->m_value > t;
+		case VT_INT:
+			return reinterpret_cast<Variant_Int*>(var.getVariant())->m_value > t;
+		case VT_UINT:
+			return reinterpret_cast<Variant_UInt*>(var.getVariant())->m_value > t;
+		case VT_LONG:
+			return reinterpret_cast<Variant_Long*>(var.getVariant())->m_value > t;
+		case VT_ULONG:
+			return reinterpret_cast<Variant_ULong*>(var.getVariant())->m_value > t;
+		case VT_LONGLONG:
+			return reinterpret_cast<Variant_LLong*>(var.getVariant())->m_value > t;
+		case VT_ULONGLONG:
+			return reinterpret_cast<Variant_ULLong*>(var.getVariant())->m_value > t;
+		case VT_FLOAT:
+			return reinterpret_cast<Variant_Float*>(var.getVariant())->m_value > t;
+		case VT_DOUBLE:
+			return reinterpret_cast<Variant_Double*>(var.getVariant())->m_value > t;
+		case VT_LONGDOUBLE:
+			return reinterpret_cast<Variant_LDouble*>(var.getVariant())->m_value > t;
+		default:
+			return false;
+	}
+}
+
+bool operator> (Variant var1, Variant var2) {
+	switch (var2.getType()){
+		case VT_CHAR:
+			return var1 > reinterpret_cast<Variant_Char*>(var2.getVariant())->m_value;
+		case VT_UCHAR:
+			return var1 > reinterpret_cast<Variant_UChar*>(var2.getVariant())->m_value;
+		case VT_SHORT:
+			return var1 > reinterpret_cast<Variant_Short*>(var2.getVariant())->m_value;
+		case VT_USHORT:
+			return var1 > reinterpret_cast<Variant_UShort*>(var2.getVariant())->m_value;
+		case VT_INT:
+			return var1 > reinterpret_cast<Variant_Int*>(var2.getVariant())->m_value;
+		case VT_UINT:
+			return var1 > reinterpret_cast<Variant_UInt*>(var2.getVariant())->m_value;
+		case VT_LONG:
+			return var1 > reinterpret_cast<Variant_Long*>(var2.getVariant())->m_value;
+		case VT_ULONG:
+			return var1 > reinterpret_cast<Variant_ULong*>(var2.getVariant())->m_value;
+		case VT_LONGLONG:
+			return var1 > reinterpret_cast<Variant_LLong*>(var2.getVariant())->m_value;
+		case VT_ULONGLONG:
+			return var1 > reinterpret_cast<Variant_ULLong*>(var2.getVariant())->m_value;
+		case VT_FLOAT:
+			return var1 > reinterpret_cast<Variant_Float*>(var2.getVariant())->m_value;
+		case VT_DOUBLE:
+			return var1 > reinterpret_cast<Variant_Double*>(var2.getVariant())->m_value;
+		case VT_LONGDOUBLE:
+			return var1 > reinterpret_cast<Variant_LDouble*>(var2.getVariant())->m_value;
+		default:
+			return false;
+	}
+}
+
+template<typename T> bool operator< (Variant var, T t){
+	switch (var.getType()){
+		case VT_CHAR:
+			return reinterpret_cast<Variant_Char*>(var.getVariant())->m_value < t;
+		case VT_UCHAR:
+			return reinterpret_cast<Variant_UChar*>(var.getVariant())->m_value < t;
+		case VT_SHORT:
+			return reinterpret_cast<Variant_Short*>(var.getVariant())->m_value < t;
+		case VT_USHORT:
+			return reinterpret_cast<Variant_UShort*>(var.getVariant())->m_value < t;
+		case VT_INT:
+			return reinterpret_cast<Variant_Int*>(var.getVariant())->m_value < t;
+		case VT_UINT:
+			return reinterpret_cast<Variant_UInt*>(var.getVariant())->m_value < t;
+		case VT_LONG:
+			return reinterpret_cast<Variant_Long*>(var.getVariant())->m_value < t;
+		case VT_ULONG:
+			return reinterpret_cast<Variant_ULong*>(var.getVariant())->m_value < t;
+		case VT_LONGLONG:
+			return reinterpret_cast<Variant_LLong*>(var.getVariant())->m_value < t;
+		case VT_ULONGLONG:
+			return reinterpret_cast<Variant_ULLong*>(var.getVariant())->m_value < t;
+		case VT_FLOAT:
+			return reinterpret_cast<Variant_Float*>(var.getVariant())->m_value < t;
+		case VT_DOUBLE:
+			return reinterpret_cast<Variant_Double*>(var.getVariant())->m_value < t;
+		case VT_LONGDOUBLE:
+			return reinterpret_cast<Variant_LDouble*>(var.getVariant())->m_value < t;
+		default:
+			return false;
+	}
+}
+
+bool operator< (Variant var1, Variant var2) {
+	switch (var2.getType()){
+		case VT_CHAR:
+			return var1 < reinterpret_cast<Variant_Char*>(var2.getVariant())->m_value;
+		case VT_UCHAR:
+			return var1 < reinterpret_cast<Variant_UChar*>(var2.getVariant())->m_value;
+		case VT_SHORT:
+			return var1 < reinterpret_cast<Variant_Short*>(var2.getVariant())->m_value;
+		case VT_USHORT:
+			return var1 < reinterpret_cast<Variant_UShort*>(var2.getVariant())->m_value;
+		case VT_INT:
+			return var1 < reinterpret_cast<Variant_Int*>(var2.getVariant())->m_value;
+		case VT_UINT:
+			return var1 < reinterpret_cast<Variant_UInt*>(var2.getVariant())->m_value;
+		case VT_LONG:
+			return var1 < reinterpret_cast<Variant_Long*>(var2.getVariant())->m_value;
+		case VT_ULONG:
+			return var1 < reinterpret_cast<Variant_ULong*>(var2.getVariant())->m_value;
+		case VT_LONGLONG:
+			return var1 < reinterpret_cast<Variant_LLong*>(var2.getVariant())->m_value;
+		case VT_ULONGLONG:
+			return var1 < reinterpret_cast<Variant_ULLong*>(var2.getVariant())->m_value;
+		case VT_FLOAT:
+			return var1 < reinterpret_cast<Variant_Float*>(var2.getVariant())->m_value;
+		case VT_DOUBLE:
+			return var1 < reinterpret_cast<Variant_Double*>(var2.getVariant())->m_value;
+		case VT_LONGDOUBLE:
+			return var1 < reinterpret_cast<Variant_LDouble*>(var2.getVariant())->m_value;
+		default:
+			return false;
+	}
+}
+
+template<typename T> bool operator>= (Variant var, T t){
+	switch (var.getType()){
+		case VT_CHAR:
+			return reinterpret_cast<Variant_Char*>(var.getVariant())->m_value >= t;
+		case VT_UCHAR:
+			return reinterpret_cast<Variant_UChar*>(var.getVariant())->m_value >= t;
+		case VT_SHORT:
+			return reinterpret_cast<Variant_Short*>(var.getVariant())->m_value >= t;
+		case VT_USHORT:
+			return reinterpret_cast<Variant_UShort*>(var.getVariant())->m_value >= t;
+		case VT_INT:
+			return reinterpret_cast<Variant_Int*>(var.getVariant())->m_value >= t;
+		case VT_UINT:
+			return reinterpret_cast<Variant_UInt*>(var.getVariant())->m_value >= t;
+		case VT_LONG:
+			return reinterpret_cast<Variant_Long*>(var.getVariant())->m_value >= t;
+		case VT_ULONG:
+			return reinterpret_cast<Variant_ULong*>(var.getVariant())->m_value >= t;
+		case VT_LONGLONG:
+			return reinterpret_cast<Variant_LLong*>(var.getVariant())->m_value >= t;
+		case VT_ULONGLONG:
+			return reinterpret_cast<Variant_ULLong*>(var.getVariant())->m_value >= t;
+		case VT_FLOAT:
+			return reinterpret_cast<Variant_Float*>(var.getVariant())->m_value >= t;
+		case VT_DOUBLE:
+			return reinterpret_cast<Variant_Double*>(var.getVariant())->m_value >= t;
+		case VT_LONGDOUBLE:
+			return reinterpret_cast<Variant_LDouble*>(var.getVariant())->m_value >= t;
+		default:
+			return false;
+	}
+}
+
+bool operator>= (Variant var1, Variant var2) {
+	switch (var2.getType()){
+		case VT_CHAR:
+			return var1 >= reinterpret_cast<Variant_Char*>(var2.getVariant())->m_value;
+		case VT_UCHAR:
+			return var1 >= reinterpret_cast<Variant_UChar*>(var2.getVariant())->m_value;
+		case VT_SHORT:
+			return var1 >= reinterpret_cast<Variant_Short*>(var2.getVariant())->m_value;
+		case VT_USHORT:
+			return var1 >= reinterpret_cast<Variant_UShort*>(var2.getVariant())->m_value;
+		case VT_INT:
+			return var1 >= reinterpret_cast<Variant_Int*>(var2.getVariant())->m_value;
+		case VT_UINT:
+			return var1 >= reinterpret_cast<Variant_UInt*>(var2.getVariant())->m_value;
+		case VT_LONG:
+			return var1 >= reinterpret_cast<Variant_Long*>(var2.getVariant())->m_value;
+		case VT_ULONG:
+			return var1 >= reinterpret_cast<Variant_ULong*>(var2.getVariant())->m_value;
+		case VT_LONGLONG:
+			return var1 >= reinterpret_cast<Variant_LLong*>(var2.getVariant())->m_value;
+		case VT_ULONGLONG:
+			return var1 >= reinterpret_cast<Variant_ULLong*>(var2.getVariant())->m_value;
+		case VT_FLOAT:
+			return var1 >= reinterpret_cast<Variant_Float*>(var2.getVariant())->m_value;
+		case VT_DOUBLE:
+			return var1 >= reinterpret_cast<Variant_Double*>(var2.getVariant())->m_value;
+		case VT_LONGDOUBLE:
+			return var1 >= reinterpret_cast<Variant_LDouble*>(var2.getVariant())->m_value;
+		default:
+			return false;
+	}
+}
+
+template<typename T> bool operator<= (Variant var, T t){
+	switch (var.getType()){
+		case VT_CHAR:
+			return reinterpret_cast<Variant_Char*>(var.getVariant())->m_value <= t;
+		case VT_UCHAR:
+			return reinterpret_cast<Variant_UChar*>(var.getVariant())->m_value <= t;
+		case VT_SHORT:
+			return reinterpret_cast<Variant_Short*>(var.getVariant())->m_value <= t;
+		case VT_USHORT:
+			return reinterpret_cast<Variant_UShort*>(var.getVariant())->m_value <= t;
+		case VT_INT:
+			return reinterpret_cast<Variant_Int*>(var.getVariant())->m_value <= t;
+		case VT_UINT:
+			return reinterpret_cast<Variant_UInt*>(var.getVariant())->m_value <= t;
+		case VT_LONG:
+			return reinterpret_cast<Variant_Long*>(var.getVariant())->m_value <= t;
+		case VT_ULONG:
+			return reinterpret_cast<Variant_ULong*>(var.getVariant())->m_value <= t;
+		case VT_LONGLONG:
+			return reinterpret_cast<Variant_LLong*>(var.getVariant())->m_value <= t;
+		case VT_ULONGLONG:
+			return reinterpret_cast<Variant_ULLong*>(var.getVariant())->m_value <= t;
+		case VT_FLOAT:
+			return reinterpret_cast<Variant_Float*>(var.getVariant())->m_value <= t;
+		case VT_DOUBLE:
+			return reinterpret_cast<Variant_Double*>(var.getVariant())->m_value <= t;
+		case VT_LONGDOUBLE:
+			return reinterpret_cast<Variant_LDouble*>(var.getVariant())->m_value <= t;
+		default:
+			return false;
+	}
+}
+
+bool operator<= (Variant var1, Variant var2) {
+	switch (var2.getType()){
+		case VT_CHAR:
+			return var1 <= reinterpret_cast<Variant_Char*>(var2.getVariant())->m_value;
+		case VT_UCHAR:
+			return var1 <= reinterpret_cast<Variant_UChar*>(var2.getVariant())->m_value;
+		case VT_SHORT:
+			return var1 <= reinterpret_cast<Variant_Short*>(var2.getVariant())->m_value;
+		case VT_USHORT:
+			return var1 <= reinterpret_cast<Variant_UShort*>(var2.getVariant())->m_value;
+		case VT_INT:
+			return var1 <= reinterpret_cast<Variant_Int*>(var2.getVariant())->m_value;
+		case VT_UINT:
+			return var1 <= reinterpret_cast<Variant_UInt*>(var2.getVariant())->m_value;
+		case VT_LONG:
+			return var1 <= reinterpret_cast<Variant_Long*>(var2.getVariant())->m_value;
+		case VT_ULONG:
+			return var1 <= reinterpret_cast<Variant_ULong*>(var2.getVariant())->m_value;
+		case VT_LONGLONG:
+			return var1 <= reinterpret_cast<Variant_LLong*>(var2.getVariant())->m_value;
+		case VT_ULONGLONG:
+			return var1 <= reinterpret_cast<Variant_ULLong*>(var2.getVariant())->m_value;
+		case VT_FLOAT:
+			return var1 <= reinterpret_cast<Variant_Float*>(var2.getVariant())->m_value;
+		case VT_DOUBLE:
+			return var1 <= reinterpret_cast<Variant_Double*>(var2.getVariant())->m_value;
+		case VT_LONGDOUBLE:
+			return var1 <= reinterpret_cast<Variant_LDouble*>(var2.getVariant())->m_value;
+		default:
+			return false;
+	}
+}
+
 bool operator!= (Variant var1, Variant var2) {
 	return !(var1 == var2);
 }
@@ -827,7 +1091,7 @@ Variant::~Variant() {
 		delete m_variant;
 }
 
-Variant& Variant::operator =(Variant val) {
+Variant Variant::operator =(Variant val) {
 	if (m_variant)
 		delete m_variant;
 
