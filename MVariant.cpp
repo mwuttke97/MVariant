@@ -171,55 +171,89 @@ VARIANT_TYPE Variant::getType() const {
 	return m_type;
 }
 
+bool Variant::isValid() const {
+	return m_variant != 0 && m_type != VT_NONE;
+}
+
+bool Variant::isInvalid() const {
+	return m_variant == 0 || m_type == VT_NONE;
+}
+
 Variant::operator char() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toChar();
 }
 
 Variant::operator unsigned char() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toUChar();
 }
 
 Variant::operator short() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toShort();
 }
 
 Variant::operator unsigned short() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toUShort();
 }
 
 Variant::operator int() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toInt();
 }
 
 Variant::operator unsigned int() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toUInt();
 }
 
 Variant::operator long() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toLong();
 }
 
 Variant::operator unsigned long() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toULong();
 }
 
 Variant::operator long long() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toLongLong();
 }
 
 Variant::operator unsigned long long() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toULongLong();
 }
 
 Variant::operator float() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toFloat();
 }
 
 Variant::operator double() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toDouble();
 }
 
 Variant::operator long double() const {
+	if (isInvalid())
+		return 0;
 	return m_variant->toLDouble();
 }
 

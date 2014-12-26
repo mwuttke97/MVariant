@@ -63,6 +63,8 @@ public:
 	Variant clone(VARIANT_TYPE t = VT_NONE);
 
 public:
+	bool isValid() const;
+	bool isInvalid() const;
 	operator char() const;
 	operator unsigned char() const;
 	operator short() const;
