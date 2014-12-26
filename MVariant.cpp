@@ -1078,7 +1078,12 @@ Variant::Variant(long double value) {
 
 Variant::Variant(const Variant& variant) :
 		m_type(variant.m_type) {
-	m_variant = variant.m_variant->clone();
+	if (variant.isValid()){
+		m_variant = variant.m_variant->clone();
+	} else{
+		m_variant = 0;
+		m_type = VT_NONE;
+	}
 }
 
 Variant::Variant(VARIANT_TYPE type) {
