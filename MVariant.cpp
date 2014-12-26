@@ -1229,11 +1229,6 @@ base_Variant* makeVariant(VARIANT_TYPE type) {
 	}
 }
 
-Variant::Variant(std::string str_name) {
-	m_type = variant_string(str_name);
-	m_variant = makeVariant(m_type);
-}
-
 std::string Variant::getTypeString() {
 	return variant_string(m_type);
 }

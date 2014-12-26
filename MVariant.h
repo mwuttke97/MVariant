@@ -41,7 +41,6 @@ public:
 	~Variant();
 
 public:
-	Variant(std::string str_name);
 	std::string getTypeString();
 	VARIANT_TYPE getType() const;
 	base_Variant* getVariant();
