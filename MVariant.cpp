@@ -85,7 +85,7 @@ public:
 	}
 };
 
-std::ostream& operator <<(std::ostream& ostream, Variant & var) {
+std::ostream& operator <<(std::ostream& ostream, Variant var) {
 	return var <<(ostream);
 }
 

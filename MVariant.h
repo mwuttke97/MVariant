@@ -110,7 +110,7 @@ bool operator<= (Variant, Variant);
 
 
 std::istream& operator>>(std::istream & istream, Variant & var);
-std::ostream& operator<<(std::ostream & ostream, Variant & var);
+std::ostream& operator<<(std::ostream & ostream, Variant var);
 
 // Converts VARIANT_TYPE into std::string
 std::string variant_string(VARIANT_TYPE type);
