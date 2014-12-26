@@ -1185,9 +1185,13 @@ Variant::~Variant() {
 Variant Variant::operator =(Variant val) {
 	if (m_variant)
 		delete m_variant;
-
-	m_variant = val.m_variant->clone();
-	m_type = val.m_type;
+	if (val.isValid()){
+		m_variant = val.m_variant->clone();
+		m_type = val.m_type;
+	} else{
+		m_variant = 0;
+		m_type = VT_NONE;
+	}
 	return *this;
 }
 
