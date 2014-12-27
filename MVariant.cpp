@@ -1092,58 +1092,87 @@ Variant::Variant(VARIANT_TYPE type) {
 }
 
 Variant Variant::toChar() {
+	if (isInvalid())
+		return Variant((char) 0);
 	return Variant(m_variant->toChar());
 }
 
 Variant Variant::toUChar() {
+	if (isInvalid())
+		return Variant((unsigned char) 0);
 	return Variant(m_variant->toUChar());
 }
 
 Variant Variant::toShort() {
+	if (isInvalid())
+		return Variant((short) 0);
 	return Variant(m_variant->toShort());
 }
 
 Variant Variant::toUShort() {
+	if (isInvalid())
+		return Variant((unsigned short) 0);
 	return Variant(m_variant->toUShort());
 }
 
 Variant Variant::toInt() {
+	if (isInvalid())
+		return Variant((int) 0);
 	return Variant(m_variant->toInt());
 }
 
 Variant Variant::toUInt() {
+	if (isInvalid())
+		return Variant((unsigned int) 0);
 	return Variant(m_variant->toUInt());
 }
 
 Variant Variant::toLong() {
+	if (isInvalid())
+		return Variant((long) 0);
 	return Variant(m_variant->toLong());
 }
 
 Variant Variant::toULong() {
+	if (isInvalid())
+		return Variant((unsigned long) 0);
 	return Variant(m_variant->toULong());
 }
 
 Variant Variant::toLongLong() {
+	if (isInvalid())
+		return Variant((long long) 0);
 	return Variant(m_variant->toLongLong());
 }
 
 Variant Variant::toULongLong() {
+	if (isInvalid())
+		return Variant((unsigned long long) 0);
 	return Variant(m_variant->toULongLong());
 }
 
 Variant Variant::toFloat() {
+	if (isInvalid())
+		return Variant((float) 0);
 	return Variant(m_variant->toFloat());
 }
 
 Variant Variant::toDouble() {
+	if (isInvalid())
+		return Variant((double) 0);
 	return Variant(m_variant->toDouble());
 }
 
 Variant Variant::toLongDouble() {
+	if (isInvalid())
+		return Variant((long double) 0);
 	return Variant(m_variant->toLDouble());
 }
 
 Variant Variant::clone(VARIANT_TYPE t) {
+	if (isInvalid()){
+		return Variant(t);
+	}
 	switch (t){
 		case VT_CHAR:
 			return toChar();
